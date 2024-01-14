@@ -42,7 +42,7 @@ class Report(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
     report_type = db.Column(db.Enum('Daily', 'Monthly'), nullable=False)
     report_date = db.Column(db.Date, nullable=False)
-    content = db.Column(db.Text, nullable=False)
+    content = db.Column(db.Text, nullable=True)
 
 with app.app_context():
     db.create_all()
@@ -133,14 +133,25 @@ def write_report():
     if request.method == 'POST':
         report_type = request.form.get('report_type')
         report_date_str = request.form.get('report_date')
+        report_content = request.form.get('report_content')
 
         if report_date_str:
             report_date = datetime.strptime(report_date_str, '%Y-%m-%d')
         else:
             report_date = datetime.utcnow()
 
-        flash('Report submitted successfully', 'success')
+        new_report = Report(
+            user_id=1,
+            report_type=report_type,
+            report_date=report_date,
+            content=report_content
+        )
 
+        db.session.add(new_report)
+        db.session.commit()
+
+        flash('Report submitted successfully', 'success')
+  
     return render_template('write_report.html')
 
 

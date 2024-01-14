@@ -24,8 +24,12 @@
                 <label for="report_date">Report Date:</label>
                 <input type="date" name="report_date" id="report_date" class="form-control" required value="{{ report_date }}">
             </div>
+            <div class="form-group third">
+                <label for="report_content">Report Content:</label>
+                <textarea name="report_content" id="report_content" class="form-control" rows="3" required>{{ report_content }}</textarea>
+            </div>
 
-            <button type="submit" class="buttona">Generate Report</button>
+            <button type="submit" class="buttona buttonb">Generate Report</button>
         </form>
         <a class="back" href="{{ url_for('dashboard') }}">Back to Dashboard</a>
     </div>

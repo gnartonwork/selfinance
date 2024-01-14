@@ -163,14 +163,11 @@ h1.title{
     padding-right: 13px;
     
 }
-
-
 #logo {
     width:auto;
     max-height:90px;
     margin-left:100px;
 }
-
 .container2,.container3,.container4 {
     display: flex;
     justify-content: center; /* Căn giữa theo chiều ngang */
@@ -182,8 +179,7 @@ h1.title{
     height:100px;
     grid-column: 2;
     margin: 20px 30px auto;
-    grid-row: span 1;
-    
+    grid-row: span 1; 
 }
 
 h2.db{
@@ -203,7 +199,6 @@ h3.db{
     font-style: italic;
     font-size: 20px;
     font-weight: lighter;
-
 }
 
 h2.db,h3.db{
@@ -220,7 +215,6 @@ h2.db,h3.db{
     margin-bottom:20px;
     margin-right: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    
 }
 
 .grid-container {
@@ -371,8 +365,8 @@ a{
     background: #6E7F9A;
 }
 .container7{
-    width: 400px;
-    height:300px;
+    width: 420px;
+    height:330px;
     background: linear-gradient(135deg,#6E7F9A,#93B5C6,#E4D8DC,#E4D8DC,#93B5C6,#6E7F9A);
 }
 .form-group{
@@ -391,5 +385,15 @@ select{
     padding:5px;
 }
 .form-control{
+    margin:auto;
+}
+.buttonb{
+    margin-top: 0px;
+}
+textarea{
+    border-radius: 7px;
+    border: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding:2px;
     margin:auto;
 }
